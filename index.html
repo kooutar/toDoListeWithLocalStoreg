@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>To Do Liste</title>
+</head>
+<body>
+    
+    <header class=" bg-[#CB9DF0] h-[100px] w-full p-8">
+      <p class="text-white "><strong>FlowTask</strong></p>
+    </header>
+    <!-- modale -->
+    <div id="fenter-modale" class="flex hidden bg-slate-200 flex justify-center">
+        <form action="" class=" fixed   w-[300px] bg-[#F0C1E1] mt-2">
+         <div class="flex justify-between p-2 ">
+            <h1>Ajouter Tache</h1>
+            <button id="bteClose" onclick="fermerFenetre()" >&times;</button>
+         </div>
+         <!-- <div class="h-[5px] w-full bg-[#CB9DF0] "></div> -->
+         <div class="flex flex-col gap-4 p-8">
+         <label for="">Titre</label>
+         <input id="addTitre" type="text">
+         <label for=""> Description</label>
+         <textarea name="" id="addDescription"></textarea>
+         <div class=" flex justify-between">
+            <label for="" id=""> date</label>
+            <label for="" id=""> Time</label>  
+         </div>
+         <div class=" flex justify-between">
+           <input type="date" class="p-1" id="addDate">
+           <input type="time" class="p-1" id="addTime">
+         </div>
+         <div class=" flex justify-between">
+            <label for=""> status</label>
+            <label for=""> priorité</label>  
+         </div>
+         <div class=" flex justify-between">
+            <select name="" id="addStatus" class="p-1 w-[50%]">
+                <option value="">To do</option>
+                <option value="">Doing</option>
+                <option value="">Done</option>
+            </select>
+            <select name="" id="addPriorite" class="p-1 w-[40%]">
+                <option value="P1">P1</option>
+                <option value="P2">P2</option>
+                <option value="P3">P3</option>
+            </select>
+          </div>
+          <button class="p-2 bg-[#CB9DF0]" >Ajouter Tache</button>
+        </div>
+        </form>
+    </div>
+    <!-- fin modale -->
+
+    <!-- section principale -->
+    <section class="p-8 flex flex-col gap-4 items-center">
+        <div class="flex gap-4 h-[30px] ">
+            <button id="bteAdd" class="bg-[#F0C1E1] p-2" onclick="ouvrireModale()">add</button>
+            <input type="search" class="border-solid border-2  w-[100px] p-1 " placeholder="recherche">
+            <button id="bteAddMultiple" class="bg-[#F0C1E1] p-2  ">add multiple</button>
+        </div>
+        <div id="containerToDo" class="w-[300px] bg-[#CB9DF0] p-2 ">
+         <div class="flex justify-between">
+            <h1>To do</h1>
+            <h1>0</h1>
+         </div>
+         <div id="zoneTacheToDo" class="ZoneTache w-[300px]" ></div>
+        </div>
+        <div id="containerDoing" class="w-[300px] bg-[#CB9DF0] p-2">
+            <div class="flex justify-between">
+                <h1>Doing</h1>
+                <h1>0</h1>
+             </div>
+             <div id="zoneTacheDoing" class="ZoneTache w-[300px]"></div>
+        </div>
+        <div id="containerDone" class="w-[300px] bg-[#CB9DF0] p-2">
+            <div class="flex justify-between">
+                <h1>Done</h1>
+                <h1>0</h1>
+             </div> 
+             <div id="zoneTacheDone" class="ZoneTache w-[300px]"></div>
+        </div>
+
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
